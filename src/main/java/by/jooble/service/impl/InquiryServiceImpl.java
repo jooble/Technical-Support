@@ -2,6 +2,7 @@ package by.jooble.service.impl;
 
 import by.jooble.dao.InquiryDao;
 import by.jooble.model.Inquiry;
+import by.jooble.service.InquiryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,8 +13,7 @@ import java.util.List;
  * TODO
  */
 @Service
-public class InquiryServiceImpl implements InquiryDao {
-
+public class InquiryServiceImpl implements InquiryService {
     @Autowired
     private InquiryDao inquiryDao;
 

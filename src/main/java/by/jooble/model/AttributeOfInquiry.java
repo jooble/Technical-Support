@@ -1,5 +1,7 @@
 package by.jooble.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 /**
@@ -11,6 +13,7 @@ public class AttributeOfInquiry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Inquiry.class)
     private Inquiry inquiry;
     private String name;

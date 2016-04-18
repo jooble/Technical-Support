@@ -14,7 +14,6 @@ import java.util.List;
  */
 @Service
 public class AttributeOfInquiryServiceImpl implements AttributeOfInquiryService {
-
     @Autowired
     private AttributeOfInquiryDao attributeOfInquiryDao;
 
