@@ -1,6 +1,6 @@
 package by.jooble.service;
 
-import by.jooble.model.AttributeOfInquiry;
+import by.jooble.dto.AttributeOfInquiryDto;
 
 import java.util.List;
 
@@ -9,13 +9,13 @@ import java.util.List;
  */
 public interface AttributeOfInquiryService {
 
-    AttributeOfInquiry getById(int id);
+    AttributeOfInquiryDto getById(int id);
 
-    void insert(AttributeOfInquiry attributeOfInquiry);
+    void insert(AttributeOfInquiryDto attributeOfInquiryDto);
 
-    List<AttributeOfInquiry> getAll();
+    List<AttributeOfInquiryDto> getAll();
 
-    void update(AttributeOfInquiry attributeOfInquiry);
+    void update(AttributeOfInquiryDto attributeOfInquiryDto);
 
-    void delete(AttributeOfInquiry attributeOfInquiry);
+    void delete(AttributeOfInquiryDto attributeOfInquiryDto);
 }

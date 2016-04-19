@@ -1,6 +1,6 @@
 package by.jooble.service;
 
-import by.jooble.model.Inquiry;
+import by.jooble.dto.InquiryDto;
 
 import java.util.List;
 
@@ -9,15 +9,15 @@ import java.util.List;
  */
 public interface InquiryService {
 
-    Inquiry getById(int id);
+    InquiryDto getById(int id);
 
-    void insert(Inquiry inquiry);
+    void insert(InquiryDto inquiryDto);
 
-    List<Inquiry> getAll();
+    List<InquiryDto> getAll();
 
-    List<Inquiry> getByName(String name);
+    List<InquiryDto> getByName(String name);
 
-    void update(Inquiry inquiry);
+    void update(InquiryDto inquiryDto);
 
-    void delete(Inquiry inquiry);
+    void delete(InquiryDto inquiryDto);
 }

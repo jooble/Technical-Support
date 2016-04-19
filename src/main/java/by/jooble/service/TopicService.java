@@ -1,6 +1,6 @@
 package by.jooble.service;
 
-import by.jooble.model.Topic;
+import by.jooble.dto.TopicDto;
 
 import java.util.List;
 
@@ -9,13 +9,13 @@ import java.util.List;
  */
 public interface TopicService {
 
-    Topic getById(int id);
+    TopicDto getById(int id);
 
-    void insert(Topic topic);
+    void insert(TopicDto topicDto);
 
-    List<Topic> getAll();
+    List<TopicDto> getAll();
 
-    void update(Topic topic);
+    void update(TopicDto topicDto);
 
-    void delete(Topic topic);
+    void delete(TopicDto topicDto);
 }
