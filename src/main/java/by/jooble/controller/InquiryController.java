@@ -38,6 +38,6 @@ public class InquiryController {
     @RequestMapping(value = "/customers/{customerName}/inquiries", method = RequestMethod.GET)
     @ResponseBody
     public List<Inquiry> allInquiriesOfCustomer(@PathVariable("customerName") String customerName) {
-        return inquiryService.getAll();
+        return inquiryService.getByName(customerName);
     }
 }

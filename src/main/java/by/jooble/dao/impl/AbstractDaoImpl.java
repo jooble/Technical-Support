@@ -12,7 +12,7 @@ import java.util.List;
 public class AbstractDaoImpl<T> implements AbstractDao<T> {
 
     @Autowired
-    private SessionFactory sessionFactory;
+    protected SessionFactory sessionFactory;
 
     private Class<T> type;
 
@@ -31,7 +31,7 @@ public class AbstractDaoImpl<T> implements AbstractDao<T> {
     }
 
     @Override
-    public List getAll() {
+    public List<T> getAll() {
         return sessionFactory.getCurrentSession().createCriteria(type).list();
     }
 

@@ -36,6 +36,12 @@ public class InquiryServiceImpl implements InquiryService {
     }
 
     @Override
+    @Transactional(readOnly = true)
+    public List<Inquiry> getByName(String name) {
+        return inquiryDao.getByName(name);
+    }
+
+    @Override
     public void update(Inquiry inquiry) {
         inquiryDao.update(inquiry);
     }

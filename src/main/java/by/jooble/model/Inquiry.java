@@ -1,6 +1,7 @@
 package by.jooble.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.sun.istack.internal.NotNull;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -16,13 +17,16 @@ public class Inquiry {
     private int id;
 
     @OneToOne(fetch = FetchType.EAGER)
+    @NotNull
     private Topic topic;
 
-    @OneToMany(fetch = FetchType.EAGER, targetEntity = AttributeOfInquiry.class , mappedBy="inquiry")
-    @JsonManagedReference
+    @OneToMany(fetch = FetchType.EAGER)
     private List<AttributeOfInquiry> attributeOfInquiry;
+    @NotNull
     private String description;
+    @NotNull
     private Date createDate;
+    @NotNull
     private String customerName;
 
     public Inquiry() {

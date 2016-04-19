@@ -15,6 +15,8 @@ public interface InquiryService {
 
     List<Inquiry> getAll();
 
+    List<Inquiry> getByName(String name);
+
     void update(Inquiry inquiry);
 
     void deleteById(int id);

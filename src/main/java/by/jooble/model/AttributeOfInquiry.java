@@ -1,6 +1,6 @@
 package by.jooble.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.sun.istack.internal.NotNull;
 
 import javax.persistence.*;
 
@@ -13,10 +13,9 @@ public class AttributeOfInquiry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @JsonBackReference
-    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Inquiry.class)
-    private Inquiry inquiry;
+    @NotNull
     private String name;
+    @NotNull
     private String value;
 
     public AttributeOfInquiry() {
@@ -47,11 +46,4 @@ public class AttributeOfInquiry {
         this.value = value;
     }
 
-    public Inquiry getInquiry() {
-        return inquiry;
-    }
-
-    public void setInquiry(Inquiry inquiry) {
-        this.inquiry = inquiry;
-    }
 }
