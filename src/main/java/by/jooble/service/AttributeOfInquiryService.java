@@ -17,5 +17,5 @@ public interface AttributeOfInquiryService {
 
     void update(AttributeOfInquiry attributeOfInquiry);
 
-    void deleteById(int id);
+    void delete(AttributeOfInquiry attributeOfInquiry);
 }

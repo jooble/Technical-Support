@@ -41,9 +41,8 @@ public class AbstractDaoImpl<T> implements AbstractDao<T> {
     }
 
     @Override
-    public void deleteById(int id) {
-        T emp = (T) sessionFactory.getCurrentSession().get(type, id);
-        sessionFactory.getCurrentSession().delete(emp);
+    public void delete(T t) {
+        sessionFactory.getCurrentSession().delete(t);
     }
 }
 

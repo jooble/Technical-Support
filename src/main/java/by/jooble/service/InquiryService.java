@@ -19,5 +19,5 @@ public interface InquiryService {
 
     void update(Inquiry inquiry);
 
-    void deleteById(int id);
+    void delete(Inquiry inquiry);
 }

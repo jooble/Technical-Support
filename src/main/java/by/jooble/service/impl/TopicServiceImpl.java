@@ -41,7 +41,7 @@ public class TopicServiceImpl implements TopicService {
     }
 
     @Override
-    public void deleteById(int id) {
-        topicDao.deleteById(id);
+    public void delete(Topic topic) {
+        topicDao.delete(topic);
     }
 }

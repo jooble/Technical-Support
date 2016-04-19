@@ -41,7 +41,7 @@ public class AttributeOfInquiryServiceImpl implements AttributeOfInquiryService 
     }
 
     @Override
-    public void deleteById(int id) {
-        attributeOfInquiryDao.deleteById(id);
+    public void delete(AttributeOfInquiry attributeOfInquiry) {
+        attributeOfInquiryDao.delete(attributeOfInquiry);
     }
 }

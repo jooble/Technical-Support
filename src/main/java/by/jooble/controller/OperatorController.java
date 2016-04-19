@@ -26,13 +26,13 @@ public class OperatorController {
 
     @RequestMapping(value = "/topics", method = RequestMethod.GET)
     @ResponseBody
-    public List<Topic> allTopics() {
+    public List<Topic> getAllTopics() {
         return topicService.getAll();
     }
 
     @RequestMapping(value = "/customers/{customerName}/inquiries", method = RequestMethod.GET)
     @ResponseBody
-    public List<Inquiry> allInquiriesOfCustomer(@PathVariable("customerName") String customerName) {
+    public List<Inquiry> getAllInquiriesOfCustomer(@PathVariable("customerName") String customerName) {
         return inquiryService.getByName(customerName);
     }
 
@@ -44,7 +44,19 @@ public class OperatorController {
 
     @RequestMapping(value = "/customers/{customerName}/inquiries", method = RequestMethod.POST)
     @ResponseBody
-    public void addInquiry(@RequestBody Inquiry inquiry) {
+    public void insertInquiry(@RequestBody Inquiry inquiry) {
         inquiryService.insert(inquiry);
+    }
+
+    @RequestMapping(value = "/customers/{customerName}/inquiries/{inquiryId}", method = RequestMethod.PUT)
+    @ResponseBody
+    public void updateInquiry(@RequestBody Inquiry inquiry) {
+        inquiryService.update(inquiry);
+    }
+
+    @RequestMapping(value = "/customers/{customerName}/inquiries/{inquiryId}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteInquiry(@RequestBody Inquiry inquiry) {
+        inquiryService.delete(inquiry);
     }
 }

@@ -17,5 +17,5 @@ public interface TopicService {
 
     void update(Topic topic);
 
-    void deleteById(int id);
+    void delete(Topic topic);
 }

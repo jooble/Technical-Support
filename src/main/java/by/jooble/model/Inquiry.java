@@ -19,7 +19,7 @@ public class Inquiry {
     @NotNull
     private Topic topic;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private List<AttributeOfInquiry> attributeOfInquiry;
     @NotNull
     private String description;

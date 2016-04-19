@@ -47,7 +47,7 @@ public class InquiryServiceImpl implements InquiryService {
     }
 
     @Override
-    public void deleteById(int id) {
-        inquiryDao.deleteById(id);
+    public void delete(Inquiry inquiry) {
+        inquiryDao.delete(inquiry);
     }
 }
