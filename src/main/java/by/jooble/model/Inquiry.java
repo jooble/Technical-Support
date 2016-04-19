@@ -1,6 +1,5 @@
 package by.jooble.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sun.istack.internal.NotNull;
 
 import javax.persistence.*;

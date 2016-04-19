@@ -1,6 +1,5 @@
 package by.jooble.controller;
 
-import by.jooble.model.AttributeOfInquiry;
 import by.jooble.model.Inquiry;
 import by.jooble.model.Topic;
 import by.jooble.service.AttributeOfInquiryService;
@@ -8,17 +7,13 @@ import by.jooble.service.InquiryService;
 import by.jooble.service.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 
 @Controller
 @RequestMapping
-public class InquiryController {
+public class OperatorController {
     @Autowired
     private TopicService topicService;
 
@@ -39,5 +34,17 @@ public class InquiryController {
     @ResponseBody
     public List<Inquiry> allInquiriesOfCustomer(@PathVariable("customerName") String customerName) {
         return inquiryService.getByName(customerName);
+    }
+
+    @RequestMapping(value = "/customers/{customerName}/inquiries/{inquiryId}", method = RequestMethod.GET)
+    @ResponseBody
+    public Inquiry getInquiryByNameAndId(@PathVariable("inquiryId") int inquiryId) {
+        return inquiryService.getById(inquiryId);
+    }
+
+    @RequestMapping(value = "/customers/{customerName}/inquiries", method = RequestMethod.POST)
+    @ResponseBody
+    public void addInquiry(@RequestBody Inquiry inquiry) {
+        inquiryService.insert(inquiry);
     }
 }
