@@ -1,14 +1,14 @@
 package by.jooble.controller;
 
+import by.jooble.dto.InquiryDto;
+import by.jooble.dto.TopicDto;
+import by.jooble.model.DataSourceDataTable;
 import by.jooble.service.AttributeOfInquiryService;
 import by.jooble.service.InquiryService;
 import by.jooble.service.TopicService;
-import by.jooble.dto.InquiryDto;
-import by.jooble.dto.TopicDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -30,8 +30,17 @@ public class OperatorController {
 
     @RequestMapping(value = "/topics/json", method = RequestMethod.GET)
     @ResponseBody
-    public List<TopicDto> getAllTopicsJson() {
-        return topicService.getAll();
+    public DataSourceDataTable getAllTopicsJson() {
+        List<TopicDto> list = topicService.getAll();
+
+        DataSourceDataTable dataSourceDatatables = new DataSourceDataTable();
+
+        dataSourceDatatables.setData(list);
+        dataSourceDatatables.setRecordsFiltered(list.size());
+        dataSourceDatatables.setRecordsTotal(list.size());
+        dataSourceDatatables.setDraw(1);
+
+        return dataSourceDatatables;
     }
 
     @RequestMapping(value = "/topics", method = RequestMethod.GET)

@@ -1,13 +1,13 @@
 package by.jooble.service.impl;
 
 import by.jooble.dao.InquiryDao;
+import by.jooble.dto.AttributeOfInquiryDto;
+import by.jooble.dto.InquiryDto;
+import by.jooble.dto.TopicDto;
 import by.jooble.model.AttributeOfInquiry;
 import by.jooble.model.Inquiry;
 import by.jooble.model.Topic;
 import by.jooble.service.InquiryService;
-import by.jooble.dto.AttributeOfInquiryDto;
-import by.jooble.dto.InquiryDto;
-import by.jooble.dto.TopicDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

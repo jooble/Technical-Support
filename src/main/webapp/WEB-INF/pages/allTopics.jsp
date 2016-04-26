@@ -11,8 +11,7 @@
     <table class="table" id="allTopics">
         <thead>
         <tr>
-            <th>ID</th>
-            <th>Name</th>
+            <th>Topics</th>
         </tr>
         </thead>
     </table>

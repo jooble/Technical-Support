@@ -1,9 +1,9 @@
 package by.jooble.service.impl;
 
 import by.jooble.dao.TopicDao;
+import by.jooble.dto.TopicDto;
 import by.jooble.model.Topic;
 import by.jooble.service.TopicService;
-import by.jooble.dto.TopicDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

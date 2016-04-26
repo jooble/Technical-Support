@@ -2,7 +2,7 @@ package by.jooble.model;
 
 import java.util.List;
 
-public class DataSourceDatatables {
+public class DataSourceDataTable {
 
     private int draw;
     private int recordsTotal;
