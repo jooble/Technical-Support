@@ -21,6 +21,6 @@ public class InquiryDaoImpl extends AbstractDaoImpl<Inquiry> implements InquiryD
 
     @Override
     public List<Inquiry> getByName(String name) {
-        return sessionFactory.getCurrentSession().createCriteria(Inquiry.class).add(Restrictions.eq("customerName", name)).list();
+        return getSessionFactory().getCurrentSession().createCriteria(Inquiry.class).add(Restrictions.eq("customerName", name)).list();
     }
 }

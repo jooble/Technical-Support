@@ -8,8 +8,10 @@ import by.jooble.dto.TopicDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+
 /**
  * TODO
  */
@@ -26,10 +28,15 @@ public class OperatorController {
     private InquiryService inquiryService;
 
 
-    @RequestMapping(value = "/topics", method = RequestMethod.GET)
+    @RequestMapping(value = "/topics/json", method = RequestMethod.GET)
     @ResponseBody
-    public List<TopicDto> getAllTopics() {
+    public List<TopicDto> getAllTopicsJson() {
         return topicService.getAll();
+    }
+
+    @RequestMapping(value = "/topics", method = RequestMethod.GET)
+    public String openPageAllTopics() {
+        return "allTopics";
     }
 
     @RequestMapping(value = "/customers/{customerName}/inquiries", method = RequestMethod.GET)

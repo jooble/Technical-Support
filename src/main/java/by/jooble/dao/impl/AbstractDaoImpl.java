@@ -12,7 +12,7 @@ import java.util.List;
 public class AbstractDaoImpl<T> implements AbstractDao<T> {
 
     @Autowired
-    protected SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
     private Class<T> type;
 
@@ -43,6 +43,10 @@ public class AbstractDaoImpl<T> implements AbstractDao<T> {
     @Override
     public void delete(T t) {
         sessionFactory.getCurrentSession().delete(t);
+    }
+
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
     }
 }
 
