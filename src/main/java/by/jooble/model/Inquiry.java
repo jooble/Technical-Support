@@ -1,6 +1,5 @@
 package by.jooble.model;
 
-import com.sun.istack.internal.NotNull;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -16,16 +15,16 @@ public class Inquiry {
     private int id;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @NotNull
+    @Column(nullable = false)
     private Topic topic;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private List<AttributeOfInquiry> attributeOfInquiry;
-    @NotNull
+    @Column(nullable = false)
     private String description;
-    @NotNull
+    @Column(nullable = false)
     private Date createDate;
-    @NotNull
+    @Column(nullable = false)
     private String customerName;
 
     public Inquiry() {
