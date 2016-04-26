@@ -15,16 +15,15 @@ public class Inquiry {
     private int id;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @Column(nullable = false)
     private Topic topic;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private List<AttributeOfInquiry> attributeOfInquiry;
-    @Column(nullable = false)
+
     private String description;
-    @Column(nullable = false)
+
     private Date createDate;
-    @Column(nullable = false)
+
     private String customerName;
 
     public Inquiry() {
